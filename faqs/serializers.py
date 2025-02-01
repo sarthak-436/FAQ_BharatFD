@@ -12,5 +12,6 @@ class FAQSerializer(serializers.ModelSerializer):
         lang = self.context.get('lang', 'en')
         
         data['question'] = instance.get_translated_question(lang)
-
+        data['answer'] = instance.get_translated_answer(lang)
+        
         return data

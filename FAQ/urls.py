@@ -18,6 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
+from rest_framework import routers
+from faqs import views
+
+router = routers.DefaultRouter()
+router.register(r'faqs', views.FAQViewSet)
 
 # Home Page 
 def faq_home(request):
@@ -27,5 +32,6 @@ def faq_home(request):
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('api/', include('faqs.urls')),
     path('', faq_home),
 ]
