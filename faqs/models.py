@@ -9,7 +9,7 @@ class FAQ(models.Model):
     # Translations (Hindi and Bengali)
     question_hi = models.TextField(blank=True)
     question_bn = models.TextField(blank=True)
-    answer_hi = RichTextField(blank=True)  # Added Hindi answer
-    answer_bn = RichTextField(blank=True)  # Added Bengali answer
+    answer_hi = RichTextField(blank=True)
+    answer_bn = RichTextField(blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)

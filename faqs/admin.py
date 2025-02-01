@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import FAQ
 
+# Model Registered with admin
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):
     list_display = ('question', 'created_at')
