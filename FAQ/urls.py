@@ -26,8 +26,21 @@ router.register(r'faqs', views.FAQViewSet)
 
 # Home Page 
 def faq_home(request):
-    html_content = """<html><head><title>FAQ System</title></head>
-    <body><h1>FAQ System - Made by Sarthak</h1></body></html>"""
+    html_content = """
+    <html>
+    <head><title>FAQ System</title></head>
+    <body>
+        <h1>FAQ System - Made by Sarthak</h1>
+        <p>Welcome to the FAQ System. Here are the available API endpoints:</p>
+        <ul>
+            <li><strong>FAQ Admin:</strong> <a href="http://localhost:8000/admin">http://localhost:8000/admin</a></li>
+            <li><strong>Fetch FAQs in English:</strong> <a href="http://localhost:8000/api/faqs/">http://localhost:8000/api/faqs/</a></li>
+            <li><strong>Fetch FAQs in Hindi:</strong> <a href="http://localhost:8000/api/faqs/?lang=hi">http://localhost:8000/api/faqs/?lang=hi</a></li>
+            <li><strong>Fetch FAQs in Bengali:</strong> <a href="http://localhost:8000/api/faqs/?lang=bn">http://localhost:8000/api/faqs/?lang=bn</a></li>
+        </ul>
+    </body>
+    </html>
+    """
     return HttpResponse(html_content)
 
 urlpatterns = [
