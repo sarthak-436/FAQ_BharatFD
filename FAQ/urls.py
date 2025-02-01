@@ -16,8 +16,15 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.http import HttpResponse
+
+def faq_home(request):
+    html_content = """<html><head><title>FAQ System</title></head>
+    <body><h1>FAQ System - Made by Sarthak</h1></body></html>"""
+    return HttpResponse(html_content)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('', faq_home),
 ]
